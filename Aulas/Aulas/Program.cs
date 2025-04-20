@@ -37,6 +37,12 @@ class Program
     /// </summary>
     private static void Aula01()
     {
+        var aula01 = new Aulas.TiposSyntax();
+        aula01.Start();
+
+        var aula01_ = new Aulas.ExemploSelectComplexo();
+        aula01_.Start();
+
         Console.ReadKey();
     }
 

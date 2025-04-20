@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="aula01-25_04_16\.gitkeep" />
     <Compile Include="aula02-25_04_23\.gitkeep" />
     <Compile Include="aula03-25_04_30\.gitkeep" />
     <Compile Include="aula04-25_05_07\.gitkeep" />
@@ -27,10 +26,6 @@
     <Compile Include="aula16-25_06_18\.gitkeep" />
     <Compile Include="aula13-25_06_06\.gitkeep" />
     <Compile Include="documentos\slides_aula\.gitkeep" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DadosPessoais\DadosPessoais.csproj" />
   </ItemGroup>
 
 </Project>
