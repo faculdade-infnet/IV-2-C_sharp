@@ -18,15 +18,31 @@ namespace Aulas
                 new() {Nome = "Fulgêncio", Sobrenome = "Fogueira", Cpf = "009.009.009-81" , Idade = 22}
             };
 
-            QuerySyntaxNewObject(pessoas);
+            QuerySyntax(pessoas);
             Console.Write("\n");
 
-            QuerySyntax(pessoas);
+            QuerySyntaxNewObject(pessoas);
             Console.Write("\n");
 
             MethodSyntax(pessoas);
         }
 
+        /// <summary>
+        /// Example Prints the values of the list of people using Query Syntax
+        /// </summary>
+        /// <param name="pessoas"></param>
+        public void QuerySyntax(List<Pessoa> pessoas)
+        {
+            // Query Syntax
+            var result = pessoas
+                        .Where(p => p.Idade > 35)
+                        .Select(s => s)
+                        .OrderBy(p => p.Idade).ThenBy(y => y.Nome)
+                        .ToList();
+
+            Console.WriteLine("\n");
+            PrintValues(result);
+        }
 
         /// <summary>
         /// Example Prints the values of the list of people using Query Syntax with NewObject
@@ -36,7 +52,7 @@ namespace Aulas
         {
             // Query Syntax
             var result = pessoas
-                        .Where(p => p.Idade > 35)
+                        .Where(p => p.Idade > 40)
                         .Select(s => new {PrimeiroNome = s.Nome, Idade = s.Idade})                        
                         .ToList();
 
@@ -49,22 +65,7 @@ namespace Aulas
         }
 
 
-        /// <summary>
-        /// Example Prints the values of the list of people using Query Syntax
-        /// </summary>
-        /// <param name="pessoas"></param>
-        public void QuerySyntax(List<Pessoa> pessoas)
-        {
-            // Query Syntax
-            var result = pessoas
-                        .Where( p => p.Idade > 35)
-                        .Select( s => s)
-                        .OrderBy(p => p.Idade).ThenBy(y => y.Nome)
-                        .ToList();
 
-            Console.WriteLine("\n");
-            PrintValues(result);
-        }
 
 
         /// <summary>

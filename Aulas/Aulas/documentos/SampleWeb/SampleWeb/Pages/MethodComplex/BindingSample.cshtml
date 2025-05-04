@@ -1,0 +1,64 @@
+﻿@page
+@model SampleWeb.Pages.MethodComplex.BindingSampleModel
+@{
+}
+
+@switch (DateTime.Now.Hour)
+{
+    case int _ when DateTime.Now.Hour <= 12:
+        <p>Manhã</p>
+        break;
+    case int _ when DateTime.Now.Hour <= 18:
+        <p>Tarde</p>
+        break;
+    default:
+        <p>Noite</p>
+        break;
+}
+
+
+<form class="form-horizontal" method="post">
+    <div class="form-group">
+        <label for="Nome" class="col-sm-2 control-label">Nome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Login.Nome">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Login.Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Senha" class="col-sm-2 control-label">Senha</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Login.Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Criar</button>
+        </div>
+    </div>
+</form>
+    <div></div>
+    <div></div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label col-form-label-lg">Nome:</label>
+        <div class="col-sm-10">
+            <label class="form-control">@Model.Login?.Nome</label>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label col-form-label-lg">Email:</label>
+        <div class="col-sm-10">
+            <label class="form-control">@Model.Login?.Email</label>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label col-form-label-lg">Senha:</label>
+        <div class="col-sm-10">
+            <label class="form-control">@Model.Login?.Password</label>
+        </div>
+    </div>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aulas", "Aulas\Aulas.csproj", "{4D1C1CB3-6E43-4A91-882D-7DBD9EB7D3E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorSample", "RazorSample\RazorSample.csproj", "{54D14AE5-9E46-4E4F-AB7A-37CE8BFA71DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4D1C1CB3-6E43-4A91-882D-7DBD9EB7D3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D1C1CB3-6E43-4A91-882D-7DBD9EB7D3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D1C1CB3-6E43-4A91-882D-7DBD9EB7D3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D14AE5-9E46-4E4F-AB7A-37CE8BFA71DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D14AE5-9E46-4E4F-AB7A-37CE8BFA71DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D14AE5-9E46-4E4F-AB7A-37CE8BFA71DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D14AE5-9E46-4E4F-AB7A-37CE8BFA71DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
