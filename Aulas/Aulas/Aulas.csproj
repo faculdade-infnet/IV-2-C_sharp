@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="aula02-25_04_25\.gitkeep" />
-    <Compile Include="aula03-25_04_30\.gitkeep" />
     <Compile Include="aula04-25_05_07\.gitkeep" />
     <Compile Include="aula05-25_05_09\.gitkeep" />
     <Compile Include="aula06-25_05_14\.gitkeep" />

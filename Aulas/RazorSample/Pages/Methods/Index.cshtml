@@ -1,0 +1,62 @@
+﻿@page
+@model RazorSample.Pages.Methods.IndexModel
+@{
+}
+
+@* CSS da página *@
+<head>
+    <style>
+        .container-com-borda {
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+
+</head>
+
+
+@* Código da Página *@
+<div class="container-com-borda">
+    <h1>Métodos tipo Handle Method</h1>
+    <h3 class="clearfix">@Model.Mensagem</h3>
+    <form method="post">
+        <button class="btn btn-default">
+            Disparando um post
+        </button>
+    </form>
+    <p>
+        <a href="" class="btn btn-default">Disparando um Get</a>
+    </p>
+</div>
+
+<div class="container-com-borda">
+    <h1>Métodos tipo Named Method</h1>
+    <div class="row">
+        <div class="col-lg-1">
+            <form asp-page-handler="edit" method="post">
+                <button class="btn btn-default">Editar</button>
+            </form>
+        </div>
+        <div class="col-lg-1">
+            <form asp-page-handler="delete" method="post">
+                <button class="btn btn-default">Deletar</button>
+            </form>
+        </div>
+        <div class="col-lg-1">
+            <form asp-page-handler="view" method="post">
+                <button class="btn btn-default">Exibir</button>
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <a asp-page-handler="upperMessage" method="get">Em Maiúsculas</a>
+        </div>
+
+        @* Parâmetros em Method Handlers - Method with parameters*@
+        <div class="col-lg-2">
+            <a asp-page-handler="case" asp-route-allUpper="false" asp-route-quantidade="20" method="get">Case com Parâmetro</a>
+        </div>
+    </div>
+<div>

@@ -6,10 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Methods\" />
-    <Folder Include="Pages\MethodComplex\" />
-    <Folder Include="Pages\MethodSimple\" />
-  </ItemGroup>
-
 </Project>

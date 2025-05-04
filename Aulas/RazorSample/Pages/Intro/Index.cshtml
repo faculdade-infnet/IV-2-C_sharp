@@ -1,0 +1,32 @@
+﻿@page
+@model RazorSample.Pages.Intro.IntroModel
+@{
+    ViewData["Title"] = "Introdução ao Razor";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Introdução</h1>
+    <p style="font-weight:600;">Razor é C# !! Páginas web construídas no servidor!>.</p>
+    <div class="row">
+        <h1 class="display-2">Calendário</h1>
+        <table class="table">
+            <thead class="thead-inverse">
+                <tr>
+                    <th colspan="2">Aulas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.aulas is not null)
+                {
+                    @foreach (Aula aula in Model.aulas)
+                    {
+                        <tr>
+                            <td>@aula.Materia</td>
+                            <td>@aula.Dia.ToShortDateString()</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
