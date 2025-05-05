@@ -1,0 +1,32 @@
+﻿@page
+@using System.Globalization
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Produtos</h1>    
+    <div class="row">
+        <table class="table">
+            <thead class="thead-inverse">
+                <tr>
+                    <th colspan="1">Nome</th>
+                    <th colspan="2">Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.produtos is not null)
+                {
+                    @foreach (Produtos item in Model.produtos)
+                    {                        
+                        <tr>
+                            <td>@item.Nome</td>
+                            <td>@item.Preco.ToString("C", new CultureInfo("pt-BR"))</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
