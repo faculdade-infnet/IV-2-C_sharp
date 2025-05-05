@@ -18,7 +18,7 @@
 <details>
 <summary>Aula 04 "RazorSample" e "Delegates</summary>
 <ul>
-    <li>Diretirvas</li>
+    <li>Diretivas</li>
     <li>Pages>MethodComplex>BindingSample.cshmtl - Code Blocks</li>    
     <li>Pages>Auals>Aula04.cshmtl - Function Blocks</li>   
     <li>Pages>Auals>Aula04.cshmtl - Transitions</li>    

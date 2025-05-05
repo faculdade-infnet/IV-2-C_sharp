@@ -46,8 +46,10 @@
     <Compile Include="Exercicio_01.cs" />
     <Compile Include="Exercicio_02.cs" />
     <Compile Include="Exercicio_03.cs" />
-    <Compile Include="Exercicio_04.cs" />
-    <Compile Include="Exercicio_05.cs" />
+    <Compile Include="Exercicio_04\Exercicio_04.cs" />
+    <Compile Include="Exercicio_04\TemperatureSensor.cs" />
+    <Compile Include="Exercicio_05\DownloadManager.cs" />
+    <Compile Include="Exercicio_05\Exercicio_05.cs" />
     <Compile Include="Exercicio_06.cs" />
     <Compile Include="Exercicio_07.cs" />
     <Compile Include="Exercicio_08.cs" />
@@ -63,5 +65,6 @@
     <None Include="documentos\samuel_hermany_DR4_TP1.docx" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
