@@ -1,0 +1,36 @@
+﻿@page
+@model RazorSample.Pages.Aulas.IntroModel
+@{
+    ViewData["Title"] = "Introdução ao Razor";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Introdução</h1>
+    <p style="font-weight:600;">Razor é C# !! Páginas web construídas no servidor!>.</p>
+    <div class="row">
+        <h1 class="display-2">Calendário</h1>
+        <table class="table">
+            <thead class="thead-inverse">
+                <tr>
+                    <th colspan="2">Aulas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.aulas is not null)
+                {
+                    @foreach (Aula aula in Model.aulas)
+                    {
+                        // Adiciona o link depágina para somente aula 03 e 04
+                        var temLink = aula.Materia.Contains("Aula 03") || aula.Materia.Contains("Aula 04");
+                        var trClick = temLink ? $"onclick=\"location.href='{aula.UrlPagina}'\" style=\"cursor:pointer;\"" : "";
+
+                        <tr @Html.Raw(trClick)>
+                            <td>@aula.Materia</td>
+                            <td>@aula.Dia.ToShortDateString()</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

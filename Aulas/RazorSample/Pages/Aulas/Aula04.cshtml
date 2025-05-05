@@ -1,0 +1,76 @@
+﻿@page
+@using RazorSample.Pages.MethodComplex
+@model RazorSample.Pages.Aulas.Aula04Model
+@{
+}
+
+
+<head>
+    <style>
+        .container-com-borda {
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+
+</head>
+
+<div class="container-com-borda">
+    @* Function Blocks *@
+    @functions
+    {
+        string GetDayPeriod(DateTime dt)
+        {
+            var partOfDay = "manhã";
+            if (dt.Hour < 12)
+                partOfDay = "tarde";
+            else if (dt.Hour > 18)
+                partOfDay = "noite";
+
+            return partOfDay;
+        }
+    }
+    <h1>Function Blocks</h1>
+    <p><strong>Período da @GetDayPeriod(DateTime.Now)</strong></p>
+</div>
+
+<div class="container-com-borda">
+    <h1>Transitions para HTML - Implícita</h1>
+    @{
+        var transition = true;
+        <p>Código transicionado para HTML = @transition</p>
+    }
+</div>
+
+<div class="container-com-borda">
+    <h1>Transitions para HTML - Explícita</h1>
+    @{
+        var person = new Login();
+        person.Nome = "Maria das Dores";
+        <text>
+            <strong>Nome: </strong>@person.Nome
+        </text>
+    }
+</div>
+
+<div class="container-com-borda">
+    <h1>Control Blocks</h1>
+
+    @* Control Blocks *@
+    @switch (DateTime.Now.Hour)
+    {
+        case int _ when DateTime.Now.Hour <= 12:
+            <p>Manhã</p>
+            break;
+        case int _ when DateTime.Now.Hour <= 18:
+            <h1>Tarde</h1>
+            break;
+        default:
+            <h1>Noite</h1>
+            break;
+    }
+
+</div>

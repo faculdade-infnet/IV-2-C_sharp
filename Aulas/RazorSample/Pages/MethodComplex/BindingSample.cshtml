@@ -34,7 +34,12 @@
 <div class="row mb3">
     <label class="col-sm-2 col-form-label col-form-label-lg">Nome:</label>
     <div class="col-sm-10">
-        <label class="form-control">@Model.Login?.Nome</label>
+        @* <label class="form-control">@Model.Login?.Nome</label> *@
+        @* Code Blocks *@
+        @{
+            var blocoNome = Model.Login?.Nome;
+        }
+        <p><strong>@(blocoNome)</strong></p>
     </div>
 </div>
 <div class="row mb3">
@@ -49,3 +54,5 @@
         <label class="form-control">@Model.Login?.Password</label>
     </div>
 </div>
+
+

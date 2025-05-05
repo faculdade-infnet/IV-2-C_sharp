@@ -6,10 +6,10 @@ class Program
     {
         // Para executar a aula desejada, basta descomentar a linha correspondente
 
-        Aula01();
+        //Aula01();
         //Aula02();
         //Aula03();
-        //Aula04();
+        Aula04();
         //Aula05();
         //Aula06();
         //Aula07();
@@ -47,23 +47,24 @@ class Program
     }
 
 
-    private static void Aula02()
-    {
-        // Criação do Projeto RazorSample
-        Console.ReadKey();
-    }
+    // Criação do Projeto RazorSample
+    private static void Aula02() => Console.ReadKey();
 
 
-    private static void Aula03()
-    {
-        
-
-        Console.ReadKey();
-    }
+    // Projeto RazorSample
+    private static void Aula03() => Console.ReadKey();
 
 
+    // Delegates
+    // Projeto RazorSample
     private static void Aula04()
     {
+        var aula04 = new Aulas.Delegate();
+        aula04.Simples();
+        aula04.ComParametro();
+        aula04.PorFunc();
+        aula04.PorFuncAnonimo();
+
         Console.ReadKey();
     }
 

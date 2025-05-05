@@ -13,6 +13,24 @@ namespace RazorSample.Pages.MethodComplex
         public void OnPost()
         {
             Login!.Nome = Login.Nome.ToUpper();
+
+            Func<double, double, double> Calcular = Adicionar;
+            double resultadoSoma = Calcular(9, 9);
+            Console.WriteLine(resultadoSoma);
+
+            Func<double, double, double> CalcularAnonimo = delegate (double n1, double n2)
+            {
+                return n1 + n2;
+            };
+
+            double resultadoSoma2 = CalcularAnonimo(1, 9);
+            Console.WriteLine(resultadoSoma2);
+
+        }
+
+        private static double Adicionar(double n1, double n2)
+        {
+            return n1 + n2;
         }
     }
 

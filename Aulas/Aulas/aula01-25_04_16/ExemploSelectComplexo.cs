@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aulas
+﻿namespace Aulas
 {
     internal class ExemploSelectComplexo
     {
@@ -53,11 +47,11 @@ namespace Aulas
             // Query Syntax
             var result = pessoas
                         .Where(p => p.Idade > 40)
-                        .Select(s => new {PrimeiroNome = s.Nome, Idade = s.Idade})                        
+                        .Select(s => new { PrimeiroNome = s.Nome, Idade = s.Idade })
                         .ToList();
 
-            Console.WriteLine("\n");            
-            
+            Console.WriteLine("\n");
+
             foreach (var item in result)
             {
                 Console.WriteLine($"Nome: {item.PrimeiroNome} / Idade: {item.Idade}");
@@ -77,7 +71,7 @@ namespace Aulas
             var result = from p in pessoas
                          where p.Idade > 35
                          orderby p.Idade, p.Nome
-                         select p;                        
+                         select p;
 
             // Valor default = null
             var d = result.Where(p => p.Idade == 37).FirstOrDefault();
