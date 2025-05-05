@@ -50,8 +50,9 @@
     <Compile Include="Exercicio_04\TemperatureSensor.cs" />
     <Compile Include="Exercicio_05\DownloadManager.cs" />
     <Compile Include="Exercicio_05\Exercicio_05.cs" />
-    <Compile Include="Exercicio_06.cs" />
-    <Compile Include="Exercicio_07.cs" />
+    <Compile Include="Exercicio_06\Exercicio_06.cs" />
+    <Compile Include="Exercicio_06\Logger.cs" />
+    <Compile Include="Exercicio_07\Exercicio_07.cs" />
     <Compile Include="Exercicio_08.cs" />
     <Compile Include="Exercicio_09.cs" />
     <Compile Include="Exercicio_10.cs" />
