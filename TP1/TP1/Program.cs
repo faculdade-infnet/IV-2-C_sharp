@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)            
         {
-            // Para executar a aula desejada, basta descomentar a linha correspondente
+            // Para executar o exercícios desejado, basta descomentar a linha correspondente
 
-            //var exercicio_01 = new Exercicio_01();
-            //exercicio_01.Start();
+            var exercicio_01 = new Exercicio_01();
+            exercicio_01.Start();
 
             //var exercicio_02 = new Exercicio_02();
             //exercicio_02.Start();
@@ -27,11 +27,8 @@
             //var exercicio_07 = new Exercicio_07();
             //exercicio_07.Start();
 
-            var exercicio_11 = new Exercicio_11();
-            exercicio_11.Start();
-
-            //var exercicio_12 = new Exercicio_12();
-            //exercicio_12.Start();
+            //var exercicio_11 = new Exercicio_11();
+            //exercicio_11.Start();
         }
     }
 }

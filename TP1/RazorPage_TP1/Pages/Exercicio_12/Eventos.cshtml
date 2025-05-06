@@ -1,0 +1,57 @@
+﻿@page
+@model Exercicio_08_RazorPage.Pages.Exercicio_12.EventosModel
+@{
+    ViewData["Title"] = "Cadastro de Evento";
+}
+
+<h2>Cadastro de Evento</h2>
+
+@if (TempData["Mensagem"] is string msg)
+{
+    <div class="alert alert-success">@msg</div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>Título</label>
+        <input asp-for="NovoEvento.Titulo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Data</label>
+        <input asp-for="NovoEvento.Data" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Local</label>
+        <input asp-for="NovoEvento.Local" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+</form>
+<hr />
+<h3>Eventos Cadastrados</h3>
+
+@if (Exercicio_08_RazorPage.Pages.Exercicio_12.EventosModel.EventosCadastrados.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Local</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var evento in Exercicio_08_RazorPage.Pages.Exercicio_12.EventosModel.EventosCadastrados)
+            {
+                <tr>
+                    <td>@evento.Titulo</td>
+                    <td>@evento.Data.ToString("dd/MM/yyyy")</td>
+                    <td>@evento.Local</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum evento cadastrado ainda.</p>
+}

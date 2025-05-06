@@ -6,6 +6,8 @@ namespace Exercicio_08_RazorPage.Pages.Exercicio_12
 {
     public class EventosModel : PageModel
     {
+        public static List<Evento> EventosCadastrados { get; set; } = new();
+
         [BindProperty]
         public Evento NovoEvento { get; set; } = new Evento();
 
@@ -17,8 +19,8 @@ namespace Exercicio_08_RazorPage.Pages.Exercicio_12
             if (!ModelState.IsValid)
                 return Page();
 
-            // Chamar o delegate (evento)
-            OnEventoCriado?.Invoke(NovoEvento);
+            EventosCadastrados.Add(NovoEvento);
+            OnEventoCriado?.Invoke(NovoEvento); // Dispara delegate (evento)
 
             TempData["Mensagem"] = "Evento cadastrado com sucesso!";
             return RedirectToPage();
