@@ -53,10 +53,8 @@
     <Compile Include="Exercicio_06\Exercicio_06.cs" />
     <Compile Include="Exercicio_06\Logger.cs" />
     <Compile Include="Exercicio_07\Exercicio_07.cs" />
-    <Compile Include="Exercicio_08.cs" />
-    <Compile Include="Exercicio_09.cs" />
-    <Compile Include="Exercicio_10.cs" />
-    <Compile Include="Exercicio_11.cs" />
+    <Compile Include="Exercicio_11\Concatenar.cs" />
+    <Compile Include="Exercicio_11\Exercicio_11.cs" />
     <Compile Include="Exercicio_12.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

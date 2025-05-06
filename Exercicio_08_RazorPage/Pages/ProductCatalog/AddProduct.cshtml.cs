@@ -15,5 +15,9 @@ namespace Exercicio_08_RazorPage.Pages.ProductCatalog
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+        }
     }
 }
