@@ -7,11 +7,18 @@ namespace TP1
     {
         internal void Start()
         {
-            Action<string> logDelegate = null;
-            logDelegate?.Invoke("Registro criado com sucesso!");
+            Logger logger = new Logger();
 
-            Console.WriteLine("Aplciação Finalziada");
-            Console.ReadKey();
+            Action<string> logDelegate = null;
+
+            logDelegate?.Invoke("Teste sem métodos associados.");
+
+            logDelegate += logger.LogToConsole;
+            logDelegate += logger.LogToFile;
+            logDelegate += logger.LogToDataBase;
+
+            logDelegate?.Invoke("Aplicação iniciada com sucesso.");
+            logDelegate?.Invoke("Processo finalizado.");
         }
     }
 }

@@ -7,9 +7,11 @@ namespace TP1
     {
         internal void Start()
         {
-            Action<string> logDelegate = Logger.LogToConsole;
-            logDelegate += Logger.LogToFile;
-            logDelegate += Logger.LogToDataBase;
+            Logger logger = new Logger();
+
+            Action<string> logDelegate = logger.LogToConsole;
+            logDelegate += logger.LogToFile;
+            logDelegate += logger.LogToDataBase;
 
             logDelegate("Registro criado com sucesso!");
 
