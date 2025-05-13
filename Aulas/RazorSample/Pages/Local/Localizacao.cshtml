@@ -2,3 +2,52 @@
 @model RazorSample.Pages.Local.LocalizacaoModel
 @{
 }
+
+<div class="col-4">
+    <form asp-antiforgery="false" method="post">
+        <div class="mb-3">
+            <label for="name">Logradouro</label>
+            <input type="text" class="form-control" name="logradouro"/>
+        </div>        
+        <div class="mb-3">
+            <label for="name">Bairro</label>
+            <input type="text" class="form-control" name="bairro"/>
+        </div>
+        <div class="mb-3">
+            <label for="name">Cidade</label>
+            <input type="text" class="form-control" name="cidade" />
+        </div>
+        <button class="btn btn-primary">Submit Post</button>
+    </form>
+   
+    <p>@Model.Mensagem</p>
+    <ul>
+        @if (Request.HasFormContentType)
+        {
+            @foreach (var item in Request.Form)
+            {
+                <li>Post: @item.Key: @Request.Form[item.Key]</li>
+            }
+        }
+    </ul>
+
+    <form asp-antiforgery="false" method="get">        
+        <div class="mb-3">
+            <label for="name">Cidade</label>
+            <input type="text" class="form-control" name="cidade" />
+        </div>
+        <button class="btn btn-primary" style="background-color: green; border-color: green;">
+            Submit Get</button>
+    </form>
+
+    <p>@Model.Mensagem</p>
+    <ul>
+        @if (Request.HasFormContentType)
+        {
+            @foreach (var item in Request.Query)
+            {
+                <li>Get: @item.Key: @item.Value</li>
+            }
+        }
+    </ul>
+</div>

@@ -2,3 +2,27 @@
 @model RazorSample.Pages.Local.ValidacaoModel
 @{
 }
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
+<div class="col-4">
+    <form method="post">
+        <div class="mb-3">
+            <label for="name">Logradouro</label>
+            <input asp-validation-for="Logradouro" class="form-control" type="text" maxlength="10" />
+            <span asp-validation-for="Logradouro" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="name">Bairro</label>
+            <input asp-validation-for="Bairro" class="form-control" type="text" />
+            <span asp-validation-for="Bairro" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="name">Cidade</label>
+            <input asp-validation-for="Cidade" class="form-control" type="text" />
+            <span asp-validation-for="Cidade" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    <div asp-validation-summary="All" class="text-danger">Por favor, corrija os erros informados!</div>
+</div>

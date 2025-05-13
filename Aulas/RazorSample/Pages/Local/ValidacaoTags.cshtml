@@ -2,3 +2,24 @@
 @model RazorSample.Pages.Local.ValidacaoTagsModel
 @{
 }
+
+<div class="col-4">            
+    <form method="post">        
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Logradouro, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(m => m.Logradouro, new { @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.Logradouro, "*" )
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Bairro, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(m => m.Bairro, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Bairro, "*")
+        </div>
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Cidade, new { @class = "col-md-2 control-label" })
+            @Html.TextBoxFor(m => m.Cidade, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Cidade, "*")
+        </div>
+        <button class="btn btn-primary">Enviar</button>
+    </form>
+</div>
