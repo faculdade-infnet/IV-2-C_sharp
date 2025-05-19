@@ -1,0 +1,25 @@
+﻿@page
+@model Exercicio_02.Pages.CityManager.CreateCityModel
+@{
+    ViewData["Title"] = "Exercício 03";
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<form class="form-horizontal" method="post">
+    <div class="form-group">
+        <label for="CityName" class="col-sm-2 control-label">Nome da Cidade</label>
+        <input asp-for="Input.CityName" class="form-control"/>
+        <span asp-validation-for="Input.CityName" class="text-danger"></span>
+    </div>
+    <div class="form-group mt-2">
+        <button class="btn btn-primary">Criar</button>
+    </div>
+</form>
+
+
+@if (Model.CityName != null)
+{
+    <label class="col-sm-2 col-form-label col-form-label-lg">Cidade: <strong>@Model.CityName</strong></label>
+}
