@@ -1,0 +1,63 @@
+﻿@page
+@model Exercicio_05.Pages.CreateCountryModel
+@{
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<form class="form-horizontal" method="post">
+    <!-- Linha de cabeçalho (labels) -->
+    <div class="row mb-2">
+        <!-- mb-2 para margem inferior -->
+        <div class="col-sm-6 text-center" >
+            <label class="control-label fw-bold">Country Code</label> <!-- fw-bold para negrito -->
+        </div>
+        <div class="col-sm-6 text-center">
+            <label class="control-label fw-bold">Country Name</label>
+        </div>
+    </div>
+
+    @for (int i = 0; i < Model.Inputs.Count; i++)
+    {
+        <div class="form-group row mt-2">
+            <div class="col-sm-6 mt-2">
+                <input asp-for="Inputs[@i].CountryCode" type="text" class="form-control">
+                <span asp-validation-for="Inputs[@i].CountryCode" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6 mt-2">
+                <input asp-for="Inputs[@i].CountryName" type="text" class="form-control">
+                <span asp-validation-for="Inputs[@i].CountryName" class="text-danger"></span>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 mt-2">
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </div>
+    </div>
+</form>
+<div></div>
+<div></div>
+@if (Model.Countries.Count > 0)
+{
+    <h3>Países cadastrados:</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Country Code</th>
+                <th>Country Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in Model.Countries)
+            {
+                <tr>
+                    <td>@country.CountryCode</td>
+                    <td>@country.CountryName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
