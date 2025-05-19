@@ -1,7 +1,7 @@
 # Desenvolvimento Web com .NET e Bases de Dados
 # TP2 - Questões (12)
 **Modo de Uso:**
-- No projeto existe um arquivo "Program.cs", que é o arquivo principal do projeto.
-- Para executar o código, basta abrir o arquivo Program.cs e descomentar o exercício que deseja executar e Iniciar a aplicação.
+- Na solução existe um projeto para cada Exercício.
+- Para executar o código, basta torna o projeto escolhido como inicial e Iniciar a aplicação.
 
 ![Descrição](documentos/enunciado_TP2.png)
