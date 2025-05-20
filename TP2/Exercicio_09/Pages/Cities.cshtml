@@ -1,0 +1,15 @@
+﻿@page
+@model Exercicio_09.Pages.CitiesModel
+@{
+    ViewData["Title"] = "Lista de Cidades";
+}
+
+<h2>Lista de Cidades</h2>
+<ul>
+    @foreach (var item in Model.Cities)
+    {
+        <li>
+            <a asp-page="/CityDetails" asp-route-cityName="@item">@item</a>
+        </li>
+    }
+</ul>

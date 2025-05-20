@@ -1,0 +1,31 @@
+﻿@page
+@model WebData.Pages.Books.BookWhere3Model
+@{
+    ViewData["Title"] = "Filtro Simples com Select";
+}
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.Title
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@page
+@model WebData.Pages.Books.RelationshipExplicitModel
+@{
+    ViewData["Title"] = "Relacionamento Explícito";
+}
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].LastName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.FirstName
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

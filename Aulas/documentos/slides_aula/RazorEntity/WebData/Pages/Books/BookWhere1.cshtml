@@ -1,0 +1,37 @@
+﻿@page
+@model WebData.Pages.Books.BookWhere1Model
+@{
+    ViewData["Title"] = "Filtro Simples por Título";
+}
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Description)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Description)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@page
+@model WebData.Pages.Books.BookWhere2Model
+@{
+    ViewData["Title"] = "Filtro Simples por Faixa de Datas";
+}</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].ReleaseDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.ReleaseDate.ToShortDateString()
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

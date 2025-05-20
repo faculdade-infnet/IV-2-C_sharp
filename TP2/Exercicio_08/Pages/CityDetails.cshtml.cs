@@ -5,12 +5,12 @@ namespace Exercicio_08.Pages
 {
     public class CityDetailsModel : PageModel
     {
-        public string CityName { get; set; } = "Minas Gerais";
+        public string CityName { get; set; } = string.Empty;
         // https://localhost:7154/CityDetails/Minas%20Gerais
 
-        public void OnGet(string cityName)
+        public void OnGet()
         {
-            CityName = RouteData.Values["cityName"].ToString();
+            CityName = RouteData.Values["cityName"].ToString() ?? "Cidade não especificada";
         }
     }
 }

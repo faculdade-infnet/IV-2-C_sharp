@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebData", "WebData\WebData.csproj", "{EB601647-037E-43DB-BDD5-A8A9D09206CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorExistingDb", "RazorExistingDb\RazorExistingDb.csproj", "{18BD1E0A-FD4F-4366-8BD0-626724602110}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB601647-037E-43DB-BDD5-A8A9D09206CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB601647-037E-43DB-BDD5-A8A9D09206CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB601647-037E-43DB-BDD5-A8A9D09206CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB601647-037E-43DB-BDD5-A8A9D09206CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18BD1E0A-FD4F-4366-8BD0-626724602110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18BD1E0A-FD4F-4366-8BD0-626724602110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18BD1E0A-FD4F-4366-8BD0-626724602110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18BD1E0A-FD4F-4366-8BD0-626724602110}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3FDB61D-E8F3-441D-9F00-8EBE690D1F35}
+	EndGlobalSection
+EndGlobal

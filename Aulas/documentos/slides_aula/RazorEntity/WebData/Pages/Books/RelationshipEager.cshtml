@@ -1,0 +1,40 @@
+﻿@page
+@model WebData.Pages.Books.RelationshipEagerModel
+@{
+    ViewData["Title"] = "Filtro Simples por Título";
+}
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookAuthors[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookAuthors[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookAuthors[0].LastName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BookAuthors)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.FirstName
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

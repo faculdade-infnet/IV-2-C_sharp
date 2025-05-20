@@ -1,0 +1,42 @@
+﻿@page
+@model WebData.Pages.Books.BookModel
+@{
+    ViewData["Title"] = "Todos os Registros";
+}</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Description)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.BookId">Alterar</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.BookId">Excluir</a>
+                    <a asp-page="./Details" asp-route-id="@item.BookId">Resumo</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
