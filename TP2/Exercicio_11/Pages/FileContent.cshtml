@@ -1,0 +1,13 @@
+﻿@page "{filename}"
+@model Exercicio_11.Pages.FilesContentModel
+@{
+    ViewData["Title"] = "Conteúdo do Arquivo";
+}
+
+<h2>Conteúdo do arquivo: @Model.FileName</h2>
+
+<pre style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
+    @Model.FileContent
+</pre>
+
+<a asp-page="/ReadFiles" class="btn btn-secondary mt-3">Voltar</a>

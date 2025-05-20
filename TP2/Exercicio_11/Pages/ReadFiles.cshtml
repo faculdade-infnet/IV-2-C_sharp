@@ -1,0 +1,22 @@
+﻿@page
+@model Exercicio_11.Pages.ReadFilesModel
+@{
+    ViewData["Title"] = "Notas Salvas";
+}
+
+<h2>Lista de Arquivos</h2>
+
+<ul>
+    @foreach (var file in Model.FileNames)
+    {
+        <li>
+            <a asp-page="/FileContent" asp-route-filename="@file">@file</a>
+        </li>
+    }
+</ul>
+
+@if (Model.SelectedFileName != null)
+{
+    <h3>Conteúdo de: @Model.SelectedFileName</h3>
+    <pre>@Model.FileContent</pre>
+}
