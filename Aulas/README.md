@@ -6,23 +6,39 @@
 - Aula 02 - "RazorSample", Criação de Razor Page.
 
 <details>
-<summary>Aula 03 "RazorSample", Page Model</summary>
+<summary>Aula 03, Page Model</summary>
 <ul>
-    <li>Pages>Methods>index.cshtml - Handle Methods</li>
-    <li>Pages>Methods>index.cshtml - Named Methods</li>
-    <li>Pages>Methods>index.cshtml - Method with parameters</li>
-    <li>Pages>MethodSimple>Simple.cshmtl - Propriedades Simples</li>
-    <li>Pages>MethodComplex>BindingSample.cshmtl - Objetos Complexos</li>
+    <li>RazorSample>Pages>Methods>index.cshtml - Handle Methods</li>
+    <li>RazorSample>Pages>Methods>index.cshtml - Named Methods</li>
+    <li>RazorSample>Pages>Methods>index.cshtml - Method with parameters</li>
+    <li>RazorSample>Pages>MethodSimple>Simple.cshmtl - Propriedades Simples</li>
+    <li>RazorSample>Pages>MethodComplex>BindingSample.cshmtl - Objetos Complexos</li>
 </ul>
 </details>
 <details>
-<summary>Aula 04 "RazorSample" e "Delegates</summary>
+<summary>Aula 04, RazorSintax e Delegates</summary>
 <ul>
     <li>Diretivas</li>
-    <li>Pages>MethodComplex>BindingSample.cshmtl - Code Blocks</li>    
-    <li>Pages>Auals>Aula04.cshmtl - Function Blocks</li>   
-    <li>Pages>Auals>Aula04.cshmtl - Transitions</li>    
-    <li>Pages>Auals>Aula04.cshmtl - ControlBlocks</li>    
+    <li>RazorSample>Pages>MethodComplex>BindingSample.cshmtl - Code Blocks</li>    
+    <li>RazorSample>Pages>Aulas>Aula04.cshmtl - Function Blocks</li>   
+    <li>RazorSample>Pages>Aulas>Aula04.cshmtl - Transitions</li>    
+    <li>RazorSample>Pages>Aulas>Aula04.cshmtl - ControlBlocks</li>    
 </ul>
 </details>
-
+<details>
+<summary>Aula 05, Forms e Validação</summary>
+<ul>        
+    <li>RazorSample>Pages>local>Localizacao.cshmtl - Forms - lendo dados por Request, percorrendo coleções</li>
+    <li>RazorSample>Pages>local>Validacao.cshmtl - Tag Helpers - Validação Cliente Side</li>
+    <li>RazorSample>Pages>local>Validacao.cshmtl - Com SumárioTag Helpers - Validação Cliente Side</li>
+    <li>RazorSample>Pages>local>Validacao.cshmtl - Validação Server Side</li>
+    <li>RazorSample>Pages>local>ValidacaoTags.cshmtl - Validação HTML Helpers</li>
+</ul>
+</details>
+<details>
+<summary>Aula 06, Entity Framework</summary>
+<ul>        
+    <li>WebData - Criando Modelo com Code First</li>
+    <li>WebData - Alterando Modelo com Database First</li>
+</ul>
+</details>
