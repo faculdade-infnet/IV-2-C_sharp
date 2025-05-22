@@ -1,13 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using WebData.Models;
+
 namespace WebData
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
+            var builder = WebApplication.CreateBuilder(args);            
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<LibraryContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnection"));
+
+            });
 
             var app = builder.Build();
 

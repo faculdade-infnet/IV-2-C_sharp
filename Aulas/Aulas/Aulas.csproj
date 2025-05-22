@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="documentos\**" />
+    <EmbeddedResource Remove="documentos\**" />
+    <None Remove="documentos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="aula05-25_05_09\.gitkeep" />
     <Compile Include="aula06-25_05_14\.gitkeep" />
     <Compile Include="aula07-25_05_16\.gitkeep" />
@@ -22,7 +28,6 @@
     <Compile Include="aula17-25_06_25\.gitkeep" />
     <Compile Include="aula16-25_06_18\.gitkeep" />
     <Compile Include="aula13-25_06_06\.gitkeep" />
-    <Compile Include="documentos\slides_aula\.gitkeep" />
   </ItemGroup>
 
 </Project>
