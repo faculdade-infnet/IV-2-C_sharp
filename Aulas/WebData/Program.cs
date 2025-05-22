@@ -16,6 +16,15 @@ namespace WebData
 
             });
 
+            // Nome da tabela histórico de migrações - MIGRATIONS
+            //builder.Services.AddDbContext<LibraryContext>(options =>
+            //{
+            //    options.UseSqlServer(
+            //        builder.Configuration.GetConnectionString("LibraryConnection"), 
+            //        x=> x.MigrationsHistoryTable("HistoricoMigrations", "dbo")
+            //    );
+            //});
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

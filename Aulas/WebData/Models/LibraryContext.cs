@@ -1,16 +1,51 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
-namespace WebData.Models
+namespace WebData.Models;
+
+public partial class LibraryContext : DbContext
 {
-    public class LibraryContext : DbContext
+    public LibraryContext()
     {
-        public LibraryContext() { }
-
-        public LibraryContext(DbContextOptions<LibraryContext> options) : base(options) { }
-
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
-
-        // public virtual DbSet<Section> Sections { get; set; }
     }
+
+    public LibraryContext(DbContextOptions<LibraryContext> options)
+        : base(options)
+    {
+    }
+
+    public virtual DbSet<Author> Authors { get; set; }
+
+    public virtual DbSet<Book> Books { get; set; }
+
+    public virtual DbSet<Section> Sections { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:LibraryConnection");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Book>(entity =>
+        {
+            entity.HasIndex(e => e.AuthorId, "IX_Books_AuthorId");
+
+            entity.Property(e => e.Isbn)
+                .HasMaxLength(50)
+                .HasColumnName("isbn");
+
+            entity.HasOne(d => d.Author).WithMany(p => p.Books).HasForeignKey(d => d.AuthorId);
+        });
+
+        modelBuilder.Entity<Section>(entity =>
+        {
+            entity.HasIndex(e => e.BookId, "IX_Sections_BookId");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.Sections).HasForeignKey(d => d.BookId);
+        });
+
+        OnModelCreatingPartial(modelBuilder);
+    }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
