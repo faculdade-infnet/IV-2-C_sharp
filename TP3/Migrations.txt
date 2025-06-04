@@ -1,0 +1,13 @@
+# criar migrations
+dotnet ef migrations add InitialCreate --project CityBreaks.Web02
+dotnet ef migrations add AddCityEntity --project CityBreaks.Web03
+dotnet ef migrations add AddPropertyEntity --project CityBreaks.Web04
+
+# Atualizar o banco de dados
+dotnet ef database update --project CityBreaks.Web04
+
+# Remove last migration
+dotnet ef migrations remove --project CityBreaks.Web03
+
+# Create database
+dotnet ef database update --project 

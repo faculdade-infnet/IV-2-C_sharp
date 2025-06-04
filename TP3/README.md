@@ -1,7 +1,10 @@
 # Desenvolvimento Web com .NET e Bases de Dados
 # TP3 - Questões (12)
-Modo de Uso:
-- No projeto existe um arquivo "Program.cs", que é o arquivo principal do projeto.
-- Para executar o código, basta abrir o arquivo Program.cs e descomentar o exercício que deseja executar e Iniciar a aplicação.
+**Modo de Uso:**
+- Na solução existe um projeto para cada Exercício.
+- Para executar o código, basta torna o projeto escolhido como inicial e Iniciar a aplicação.
+- O Exercício 08 não tem menu para testar basta colocar a url + a cidade. 
+- Exemplo: https://localhost:7200/CityDetails/Brasilia
 
-![Descrição](documentos/enunciado_TP3.png)
+
+![Descrição](documentos/enunciado_TP2.png)
