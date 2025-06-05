@@ -2,9 +2,13 @@
 dotnet ef migrations add InitialCreate --project CityBreaks.Web02
 dotnet ef migrations add AddCityEntity --project CityBreaks.Web03
 dotnet ef migrations add AddPropertyEntity --project CityBreaks.Web04
+dotnet ef migrations add SeedInitialData --project CityBreaks.Web06
+
 
 # Atualizar o banco de dados
+dotnet ef database update --project CityBreaks.Web03
 dotnet ef database update --project CityBreaks.Web04
+dotnet ef database update --project CityBreaks.Web06
 
 # Remove last migration
 dotnet ef migrations remove --project CityBreaks.Web03

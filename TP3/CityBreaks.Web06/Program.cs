@@ -1,4 +1,5 @@
 using CityBreaks.Web.Data;
+using CityBreaks.Web06.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace CityBreaks.Web
@@ -17,6 +18,8 @@ namespace CityBreaks.Web
                 options.UseSqlite(builder.Configuration.GetConnectionString("CityBreakConnection"));
             });
 
+            // Injeção do serviço
+            builder.Services.AddScoped<ICityService, CityService>();
 
             var app = builder.Build();
 
