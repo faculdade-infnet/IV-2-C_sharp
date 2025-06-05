@@ -15,3 +15,6 @@ dotnet ef migrations remove --project CityBreaks.Web03
 
 # Create database
 dotnet ef database update --project 
+
+
+https://localhost:7034/CityDetails?name=Paris

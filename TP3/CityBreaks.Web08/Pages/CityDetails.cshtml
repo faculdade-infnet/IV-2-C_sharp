@@ -1,0 +1,24 @@
+﻿@page
+@model CityBreaks.Web08.Pages.CityDetailsModel
+@{
+    ViewData["Title"] = "Detalhes das Cidades";
+}
+
+<h1>@Model.City?.Name</h1>
+<p><strong>País:</strong> @Model.City?.Country?.CountryName</p>
+<p><strong>Cidade:</strong> @Model.City?.Name</p>
+
+@if (Model.City?.Properties != null && Model.City.Properties.Any())
+{
+    <ul>
+        @foreach (var property in Model.City.Properties)
+        {
+            <h2>@property.Name</h2>
+            <p><strong>Preço por noite:</strong> R$@property.PricePerNight</p>
+        }
+    </ul>
+}
+else
+{
+    <p>Não há propriedades cadastradas nesta cidade.</p>
+}
