@@ -1,0 +1,28 @@
+﻿@page
+@model CityBreaks.Web08.Pages.CreatePropertyModel
+@{
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<h2>Criar Nova Propriedade</h2>
+
+<div class="col-4">
+    <form method="post">
+        <div class="mb-2">
+            <label class="mt-1" for="Name">Nome da Propriedade:</label>
+            <input class="form-control" type="text" id="Name" asp-for="Property.Name" />
+        </div>
+        <div class="mb-2">
+            <label class="mt-1" for="CityId">Cidade:</label>
+            <select class="form-control" asp-items="Model.CitiesSelectList" asp-for="Property.CityId"></select>
+        </div>
+        <div class="mb-2">
+            <label class="mt-1" for="PricePerNight">Preço por Noite:</label>
+            <input class="form-control" type="number" step="0.01" asp-for="Property.PricePerNight" />
+        </div>
+
+        <button class="btn btn-primary mt-2" type="submit">Salvar</button>
+    </form>
+</div>

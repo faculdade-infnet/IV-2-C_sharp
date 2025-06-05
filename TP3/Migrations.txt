@@ -16,6 +16,8 @@ dotnet ef migrations remove --project CityBreaks.Web03
 # Create database
 dotnet ef database update --project 
 
+# Update database to latest migration
+dotnet ef database update --project CityBreaks.Web10
 
 # Erro de compilação
 dotnet clean
