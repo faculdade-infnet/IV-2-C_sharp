@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityBreaks.Web07", "CityBre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityBreaks.Web08", "CityBreaks.Web08\CityBreaks.Web08.csproj", "{693A67E3-BC5A-9DC3-D83D-C18203DBDF67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityBreaks.Web09", "CityBreaks.Web09\CityBreaks.Web09.csproj", "{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{693A67E3-BC5A-9DC3-D83D-C18203DBDF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693A67E3-BC5A-9DC3-D83D-C18203DBDF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693A67E3-BC5A-9DC3-D83D-C18203DBDF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{D8F4A472-6E33-DBFD-7E5D-86B0BA90B437} = {D848F494-60FF-4CCD-9C87-AAD0761869F5}
 		{A231F13D-766B-9545-F99C-586C3CEB70A8} = {E770EF52-6CC3-4899-88AC-18EB0C76E913}
 		{693A67E3-BC5A-9DC3-D83D-C18203DBDF67} = {9F7F28E8-5447-479E-AEE4-2AEB4A4A1449}
+		{34CF45CC-2BAC-3E20-71A4-103FE3FAA80D} = {CB9FB3D9-5DFB-4C95-AF5D-4FB74E8838D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF18ED2B-3893-495A-B9D8-EB12157D30BD}

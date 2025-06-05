@@ -17,4 +17,6 @@ dotnet ef migrations remove --project CityBreaks.Web03
 dotnet ef database update --project 
 
 
-https://localhost:7034/CityDetails?name=Paris
+# Erro de compilação
+dotnet clean
+dotnet build
