@@ -1,4 +1,5 @@
 using AT.Data;
+using AT.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace AT
@@ -17,6 +18,8 @@ namespace AT
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AgenciaConnection"));
 
             });
+
+            builder.Services.AddScoped<IService, Service>();
 
             var app = builder.Build();
 

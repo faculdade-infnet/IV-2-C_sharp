@@ -6,7 +6,7 @@ namespace AT.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IPacoteTuristicoService _cityService;
+        private readonly IService _cityService;
         private readonly AgenciaContext _context;
 
         public IndexModel(ILogger<IndexModel> logger, AgenciaContext context)

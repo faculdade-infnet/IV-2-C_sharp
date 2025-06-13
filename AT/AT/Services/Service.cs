@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AT.Services
 {
-    public class PacoteTuristicoService : IPacoteTuristicoService
+    public class Service : IService
     {
         private readonly AgenciaContext _context;
 
-        public PacoteTuristicoService(AgenciaContext context)
+        public Service(AgenciaContext context)
         {
             _context = context;
         }
@@ -24,15 +24,22 @@ namespace AT.Services
                 .ToListAsync();
         }
 
-        // Carrega todas as propriedades em Pacote Turistico
-        public async Task<PacoteTuristico?> GetByNameAsync(string name)
+        public async Task<List<Destino>> GetAllAsyncDestino()
         {
-            return await _context.PacotesTuristicos
-                .Include(c => c.Titulo)
-                .Include(c => c.Preco)
-                .Include(c => c.CapacidadeMaxima)
-                .Include(c => c.DataInicio)
-                .FirstOrDefaultAsync(c => EF.Functions.Collate(c.Titulo, "NOCASE") == name);
+            return await _context.Destinos.ToListAsync();
+        }
+
+        public async Task<List<PacoteTuristico>> GetAllAsyncPacoteTuristico()
+        {
+            return await _context.PacotesTuristicos.ToListAsync();
+        }
+
+        // Carrega todas as propriedades em Pacote Turistico
+        public async Task<PacoteTuristico?> GetByIdAsync(int id)
+        {
+            return await _context.PacotesTuristicos                
+                .Include(n => n.Destinos)
+                .FirstOrDefaultAsync(n => n.Id == id);
         }
     }
 }

@@ -7,18 +7,18 @@ namespace AT.Pages.NewPages
 {
     public class DetailsModel : PageModel
     {
-        private readonly IPacoteTuristicoService _pacoteTuristicoService;
+        private readonly IService _pacoteTuristicoService;
 
-        public DetailsModel(IPacoteTuristicoService cityService)
+        public DetailsModel(IService cityService)
         {
             _pacoteTuristicoService = cityService;
         }
 
         public PacoteTuristico? PacoteTuristico { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string nome)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            PacoteTuristico = await _pacoteTuristicoService.GetByNameAsync(nome);
+            PacoteTuristico = await _pacoteTuristicoService.GetByIdAsync(id);
 
             if (PacoteTuristico == null)
             {
