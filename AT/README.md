@@ -1,7 +1,8 @@
 # Fundamentos de Desenvolvimento com C#
 # AT - Questões (12)
 Modo de Uso:
-- Item5 - Página Destino.
+- Item 1 ao 4 Estão no projeto Parte1_Delegates_e_Events, pra executrar cada exercicios deve-se abri o Program.cs e descomentar o exercício que deseja executar.
+- - Item5 - Página Destino.
 - Item6 - Página Cliente>Create.
 - Item7 - A clicar enm Detalhes do Cliente ou ao clicar em um Pacote Turistico ja cadastrado na página Create PacoteTurístico.
 - Item8 - Páginas SaveNotes e ViewNotes.
