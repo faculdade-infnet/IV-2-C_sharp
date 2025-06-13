@@ -1,0 +1,25 @@
+﻿@page
+@model AT.Pages.NewPages.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes das Cidades";
+}
+
+<h1>@Model.PacoteTuristico?.Titulo</h1>
+<p><strong>Preço:</strong> @Model.PacoteTuristico?.Preco</p>
+<p><strong>Data de Início:</strong> @Model.PacoteTuristico?.DataInicio</p>
+<p><strong>Capacidade Máxima:</strong> @Model.PacoteTuristico?.CapacidadeMaxima</p>
+
+@if (Model.PacoteTuristico?.Destinos != null && Model.PacoteTuristico.Destinos.Any())
+{
+    <ul>
+        @foreach (var property in Model.PacoteTuristico.Destinos)
+        {
+            <h2>@property.Nome</h2>
+            <h2>@property.Pais</h2>
+        }
+    </ul>
+}
+else
+{
+    <p>Não há propriedades cadastradas nesta cidade.</p>
+}

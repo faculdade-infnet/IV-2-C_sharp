@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AT", "AT.csproj", "{1F1ABE65-3B61-4AF6-94B0-81BD4F41E6BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AT", "AT\AT.csproj", "{E48B9B82-22A8-9971-6D7B-0CB1C8EA313C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parte1_Delegates_e_Events", "Parte1_Delegates_e_Events\Parte1_Delegates_e_Events.csproj", "{6676784E-ACE8-494B-96D8-9B712046037F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentos", "documentos", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		documentos\enunciado_AT.png = documentos\enunciado_AT.png
+		documentos\samuel_hermany_DR4_AT.docx = documentos\samuel_hermany_DR4_AT.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +19,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F1ABE65-3B61-4AF6-94B0-81BD4F41E6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F1ABE65-3B61-4AF6-94B0-81BD4F41E6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F1ABE65-3B61-4AF6-94B0-81BD4F41E6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F1ABE65-3B61-4AF6-94B0-81BD4F41E6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E48B9B82-22A8-9971-6D7B-0CB1C8EA313C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E48B9B82-22A8-9971-6D7B-0CB1C8EA313C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E48B9B82-22A8-9971-6D7B-0CB1C8EA313C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E48B9B82-22A8-9971-6D7B-0CB1C8EA313C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6676784E-ACE8-494B-96D8-9B712046037F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6676784E-ACE8-494B-96D8-9B712046037F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6676784E-ACE8-494B-96D8-9B712046037F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6676784E-ACE8-494B-96D8-9B712046037F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {289CD93B-846B-4A3F-80F3-38CC9EE41AE3}
+		SolutionGuid = {E948ABF9-4F26-48FA-9F01-90FA379C37CF}
 	EndGlobalSection
 EndGlobal
