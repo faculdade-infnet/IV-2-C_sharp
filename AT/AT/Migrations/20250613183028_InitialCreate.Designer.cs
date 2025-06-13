@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AT.Migrations
 {
     [DbContext(typeof(AgenciaContext))]
-    [Migration("20250613041158_InitialCreate")]
+    [Migration("20250613183028_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -37,11 +37,16 @@ namespace AT.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("EnderecoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EnderecoId");
 
                     b.ToTable("Clientes");
 
@@ -136,6 +141,59 @@ namespace AT.Migrations
                         });
                 });
 
+            modelBuilder.Entity("AT.Models.Endereco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rua")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Enderecos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cidade = "São Paulo",
+                            Rua = "Rua das Palmeiras, 123"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cidade = "Rio de Janeiro",
+                            Rua = "Avenida Brasil, 456"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cidade = "Curitiba",
+                            Rua = "Rua XV de Novembro, 789"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Cidade = "Porto Alegre",
+                            Rua = "Rua Sete de Setembro, 101"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Cidade = "Belo Horizonte",
+                            Rua = "Avenida Afonso Pena, 202"
+                        });
+                });
+
             modelBuilder.Entity("AT.Models.PacoteTuristico", b =>
                 {
                     b.Property<int>("Id")
@@ -151,6 +209,7 @@ namespace AT.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Preco")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Titulo")
@@ -265,6 +324,15 @@ namespace AT.Migrations
                             DataReserva = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PacoteTuristicoId = 4
                         });
+                });
+
+            modelBuilder.Entity("AT.Models.Cliente", b =>
+                {
+                    b.HasOne("AT.Models.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId");
+
+                    b.Navigation("Endereco");
                 });
 
             modelBuilder.Entity("AT.Models.Destino", b =>

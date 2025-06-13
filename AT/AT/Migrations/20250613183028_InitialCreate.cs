@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -13,17 +14,17 @@ namespace AT.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Clientes",
+                name: "Enderecos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Rua = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.Id);
+                    table.PrimaryKey("PK_Enderecos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,11 +36,31 @@ namespace AT.Migrations
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CapacidadeMaxima = table.Column<int>(type: "int", nullable: false),
-                    Preco = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Preco = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PacotesTuristicos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Clientes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EnderecoId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Clientes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Clientes_Enderecos_EnderecoId",
+                        column: x => x.EnderecoId,
+                        principalTable: "Enderecos",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -91,14 +112,14 @@ namespace AT.Migrations
 
             migrationBuilder.InsertData(
                 table: "Clientes",
-                columns: new[] { "Id", "Email", "Nome" },
+                columns: new[] { "Id", "Email", "EnderecoId", "Nome" },
                 values: new object[,]
                 {
-                    { 1, "alice.fernandes@email.com", "Alice Fernandes" },
-                    { 2, "bruno.martins@email.com", "Bruno Martins" },
-                    { 3, "carla.ribeiro@email.com", "Carla Ribeiro" },
-                    { 4, "diego.souza@email.com", "Diego Souza" },
-                    { 5, "elaine.costa@email.com", "Elaine Costa" }
+                    { 1, "alice.fernandes@email.com", null, "Alice Fernandes" },
+                    { 2, "bruno.martins@email.com", null, "Bruno Martins" },
+                    { 3, "carla.ribeiro@email.com", null, "Carla Ribeiro" },
+                    { 4, "diego.souza@email.com", null, "Diego Souza" },
+                    { 5, "elaine.costa@email.com", null, "Elaine Costa" }
                 });
 
             migrationBuilder.InsertData(
@@ -111,6 +132,18 @@ namespace AT.Migrations
                     { 3, "Torre Eiffel", null, "França" },
                     { 4, "Machu Picchu", null, "Peru" },
                     { 5, "Grand Canyon", null, "Estados Unidos" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Enderecos",
+                columns: new[] { "Id", "Cidade", "Rua" },
+                values: new object[,]
+                {
+                    { 1, "São Paulo", "Rua das Palmeiras, 123" },
+                    { 2, "Rio de Janeiro", "Avenida Brasil, 456" },
+                    { 3, "Curitiba", "Rua XV de Novembro, 789" },
+                    { 4, "Porto Alegre", "Rua Sete de Setembro, 101" },
+                    { 5, "Belo Horizonte", "Avenida Afonso Pena, 202" }
                 });
 
             migrationBuilder.InsertData(
@@ -136,6 +169,11 @@ namespace AT.Migrations
                     { 4, 4, new DateTime(2025, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 5 },
                     { 5, 5, new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 4 }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clientes_EnderecoId",
+                table: "Clientes",
+                column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Destinos_PacoteTuristicoId",
@@ -167,6 +205,9 @@ namespace AT.Migrations
 
             migrationBuilder.DropTable(
                 name: "PacotesTuristicos");
+
+            migrationBuilder.DropTable(
+                name: "Enderecos");
         }
     }
 }

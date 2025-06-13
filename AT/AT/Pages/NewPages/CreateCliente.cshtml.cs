@@ -24,12 +24,23 @@ namespace AT.Pages.NewPages
             if (!ModelState.IsValid)
                 return Page();
 
-            // Adiciona os itens ao contexto em memória
+            // Salva o endereço do cliente
+            if (Cliente.Endereco != null)
+            {
+                await _context.Enderecos.AddAsync(Cliente.Endereco);
+                await _context.SaveChangesAsync();
+
+                // Vincula o endereço ao cliente
+                Cliente.EnderecoId = Cliente.Endereco.Id;
+            }
+
+            // Adiciona os itens ao contexto em memória         
             await _context.Clientes.AddAsync(Cliente);
             // Salva as alterações no banco de dados
             await _context.SaveChangesAsync();
 
             Id = Cliente.Id;
+            // Limpa o formulário para novo cadastro
             Cliente = new Cliente();            
 
             return Page();

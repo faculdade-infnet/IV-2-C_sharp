@@ -10,34 +10,28 @@
 <h2>Cadastrar Cliente</h2>
 
 <div class="col-4">
-    <form method="post" asp-page-handler="Cliente">        
+    <form method="post" asp-page-handler="Cliente">
         <div class="mb-2">
             <label class="mt-1" for="Nome">Nome:</label>
-            <input class="form-control" type="text" id="Name" asp-for="Cliente.Nome" />   
+            <input class="form-control" type="text" id="Name" asp-for="Cliente.Nome" />
             <small class="text-danger" asp-validation-for="Cliente.Nome"></small>
         </div>
         <div class="mb-2">
             <label class="mt-1" for="Email">Email:</label>
-            <input class="form-control" type="text" id="Email" asp-for="Cliente.Email"/>
+            <input class="form-control" type="text" id="Email" asp-for="Cliente.Email" />
+        </div>
+
+
+        <strong>Endereço:</strong>
+        <div class="mb-3">
+            <label asp-for="Cliente.Endereco.Rua" class="form-label"></label>
+            <input asp-for="Cliente.Endereco.Rua" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Cliente.Endereco.Cidade" class="form-label"></label>
+            <input asp-for="Cliente.Endereco.Cidade" class="form-control" />
         </div>
         <button class="btn btn-primary mt-2 mb-2" type="submit">Salvar Cliente</button>
-
-
-        @* <fieldset>
-            <legend>Endereço</legend>
-
-            <div class="mb-3">
-                <label asp-for="Cliente.Endereco.Logradouro" class="form-label"></label>
-                <input asp-for="Cliente.Endereco.Logradouro" class="form-control" />
-                <span asp-validation-for="Cliente.Endereco.Logradouro" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Cliente.Endereco.Cidade" class="form-label"></label>
-                <input asp-for="Cliente.Endereco.Cidade" class="form-control" />
-                <span asp-validation-for="Cliente.Endereco.Cidade" class="text-danger"></span>
-            </div>
-        </fieldset> *@
 
         <div asp-validation-summary="All" class="text-danger"></div>
     </form>

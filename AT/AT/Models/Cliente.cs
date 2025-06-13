@@ -10,8 +10,10 @@ namespace AT.Models
         [Required(ErrorMessage = "O email é obrigatório.")]
         public string Email { get; set; } = string.Empty;
 
-        //[Required]
-        //public _Endereco Endereco { get; set; } = new _Endereco();
+        // Chave estrangeira
+        public int? EnderecoId { get; set; }
+        // Navegação
+        public Endereco? Endereco { get; set; }
 
         // Lista de reservas associadas ao cliente
         public List<Reserva> Reservas { get; set; } = new();
